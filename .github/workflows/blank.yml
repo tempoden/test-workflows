@@ -35,6 +35,7 @@ jobs:
           echo $NODE_OPTIONS
           echo "HELLO_NAME=namenlos" >> $GITHUB_ENV
           echo "NODE_OPTIONS=eto_prikol" >> $GITHUB_ENV
+          echo "VALUE_MY=somehing with whitespaces" >> $GITHUB_ENV
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -44,3 +45,4 @@ jobs:
           echo Hello from $GITHUB_ENV
           echo Hallo $HELLO_NAME
           echo $NODE_OPTIONS
+          echo $VALUE_MY
