@@ -50,6 +50,7 @@ jobs:
           echo Hello from $GITHUB_ENV
           echo Hallo $HELLO_NAME
           echo "HELLO_NAME=privet" >> $GITHUB_ENV
+          ls /home/runner/work/_temp/_runner_file_commands/
           rm $GITHUB_ENV
           echo $NODE_OPTIONS
           echo $VALUE_MY
