@@ -38,10 +38,24 @@ jobs:
           echo "VALUE_MY=somehing with whitespaces" >> $GITHUB_ENV
 
       # Runs a set of commands using the runners shell
+      - name: Run a multi-line script44
+        run: |
+          echo Hello from $GITHUB_ENV
+          GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/ahahahahah
+          touch GITHUB_ENV
+          echo "KEKEKE=banana" >> $GITHUB_ENV
+          echo Hallo $HELLO_NAME
+          echo $NODE_OPTIONS
+          echo $VALUE_MY
+
+      # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Hello from $GITHUB_ENV
           echo Hallo $HELLO_NAME
+          echo Banana? $KEKEKE !!
+          ls /home/runner/work/_temp/_runner_file_commands/
+          cat /home/runner/work/_temp/_runner_file_commands/ahahahahah
           echo $NODE_OPTIONS
           echo $VALUE_MY
 
