@@ -36,10 +36,19 @@ jobs:
           echo "HELLO_NAME=namenlos" >> $GITHUB_ENV
           echo "NODE_OPTIONS=eto_prikol" >> $GITHUB_ENV
           echo "VALUE_MY=somehing with whitespaces" >> $GITHUB_ENV
-
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script444
+        run: |
+          echo $HOME
+          cd
+          ls
+          HOME=/home/runner/work/_temp/_runner_file_commands/
+          cd
+          echo
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script44
         run: |
+          echo $HOME
           echo Hello from $GITHUB_ENV
           GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/ahahahahah
           touch GITHUB_ENV
@@ -51,6 +60,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          echo $HOME
           echo Hello from $GITHUB_ENV
           echo Hallo $HELLO_NAME
           echo Banana? $KEKEKE !!
@@ -58,9 +68,13 @@ jobs:
           cat /home/runner/work/_temp/_runner_file_commands/ahahahahah
           echo $NODE_OPTIONS
           echo $VALUE_MY
+          echo "HOME=/home/runner/work/_temp/_runner_file_commands/" >> $GITHUB_ENV
 
       - name: Run a multi-line script2
         run: |
+          echo $HOME
+          cd
+          ls
           echo Hello from $GITHUB_ENV
           echo Hallo $HELLO_NAME
           echo "HELLO_NAME=privet" >> $GITHUB_ENV
